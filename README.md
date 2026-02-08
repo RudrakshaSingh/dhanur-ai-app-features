@@ -53,12 +53,21 @@ Currently, all feature implementations are integrated into a single React Native
 
 3. **Run the application**
    ```bash
-   npx expo start
+   npm start
    ```
 
 4. **Test on device**
-   - Scan the QR code with Expo Go app (iOS/Android)
+   - Use a development build APK (Expo Dev Client), not Expo Go
+   - `npm run start:dev` runs Metro in dev-client LAN mode (same setup as your working project)
+   - Do not choose `http://localhost:8081` inside the app on a physical phone
+   - Use `Fetch development servers` or scan the QR from terminal
+   - If using USB debugging, run `npm run start:usb` and then localhost will work
    - Or press `i` for iOS simulator / `a` for Android emulator
+
+5. **Build development APK**
+   ```bash
+   eas build --profile development --platform android
+   ```
 
 ## Notes
 
@@ -71,4 +80,4 @@ Currently, all feature implementations are integrated into a single React Native
 - Node.js 16+ 
 - Expo CLI
 - iOS Simulator (macOS) or Android Emulator
-- Physical device with Expo Go app (recommended for testing microphone and overlay features)
+- Physical device with the development APK (recommended for testing microphone and overlay features)

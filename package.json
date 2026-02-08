@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "expo start",
+    "start": "expo start --lan",
+    "start:dev": "expo start --dev-client --lan",
+    "start:tunnel": "expo start --dev-client --tunnel",
+    "start:localhost": "expo start --dev-client --localhost",
+    "start:usb": "adb reverse tcp:8081 tcp:8081 && expo start --dev-client --localhost",
+    "start:expo-go": "expo start --go --lan",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web"
